@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./code.css" />
+  </head>
+  <body>
+    <div class="container-content">
+      <h1 class="title">Error & Exception Concepts</h1>
+      <h3 class="child-title">
+        <b>1. Khái niệm về Error & Exception Concepts</b>
+      </h3>
+      <div class="content">
+        <ul>
+          <li>
+            <b>Error</b>: Lỗi không thể phục hồi (e.g., OutOfMemoryError).
+          </li>
+          <li><b>Exception</b>: Lỗi có thể xử lý trong chương trình.</li>
+
+          <li>
+            Loại exception:
+            <ul>
+              <li>
+                <b>Checked</b>: Cần xử lý tại compile-time (e.g., IOException).
+              </li>
+              <li>
+                <b>Unchecked</b>: Phát sinh tại runtime (e.g.,
+                NullPointerException).
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h3 class="child-title">
+        <b> Ví dụ về Error (Lỗi không thể phục hồi) </b>
+      </h3>
+      <div class="content">
+        <div class="code">
+          <span class="code-title"><b>Code</b></span>
+          <pre><code class="language-java">
+            <span class="keyword">public class</span> <span class="class-name">ErrorExample</span> {
+                <span class="keyword">public static void</span> <span class="method-name">main</span>(<span class="keyword">String[]</span> args) {
+                    <span class="keyword">try</span> {
+                        <span class="comment">// Cố gắng tạo ra một lỗi OutOfMemoryError</span>
+                        int[] largeArray = <span class="keyword">new</span> int[Integer.MAX_VALUE];
+                    } <span class="keyword">catch</span> (<span class="keyword">Error</span> e) {
+                        System.out.println(<span class="string">"Caught Error: "</span> + e);
+                    }
+                }
+            }
+            </code></pre>
+        </div>
+      </div>
+      <h3 class="child-title">
+        <b> Ví dụ về Checked Exception (Lỗi cần xử lý tại compile-time) </b>
+      </h3>
+      <div class="content">
+        <div class="code">
+          <span class="code-title"><b>Code</b></span>
+          <pre><code class="language-java">
+            <span class="keyword">import</span> java.io.*;
+            
+            <span class="keyword">public class</span> <span class="class-name">CheckedExceptionExample</span> {
+                <span class="keyword">public static void</span> <span class="method-name">main</span>(<span class="keyword">String[]</span> args) {
+                    <span class="keyword">try</span> {
+                        <span class="comment">// Cố gắng đọc từ một tệp không tồn tại</span>
+                        FileReader file = <span class="keyword">new</span> FileReader(<span class="string">"nonexistentfile.txt"</span>);
+                        BufferedReader fileInput = <span class="keyword">new</span> BufferedReader(file);
+                        System.out.println(fileInput.readLine());
+                        fileInput.close();
+                    } <span class="keyword">catch</span> (IOException e) {
+                        System.out.println(<span class="string">"Caught Checked Exception: "</span> + e);
+                    }
+                }
+            }
+            <p>//Caught Checked Exception: java.io.FileNotFoundException: nonexistentfile.txt (No such file or directory)            </p>
+            </code></pre>
+        </div>
+      </div>
+      <h3 class="child-title">
+        <b> Ví dụ về Unchecked Exception (Lỗi phát sinh tại runtime) </b>
+      </h3>
+      <div class="content">
+        <div class="code">
+          <span class="code-title"><b>Code</b></span>
+          <pre><code class="language-java">
+            <span class="keyword">public class</span> <span class="class-name">UncheckedExceptionExample</span> {
+                <span class="keyword">public static void</span> <span class="method-name">main</span>(<span class="keyword">String[]</span> args) {
+                    <span class="keyword">try</span> {
+                        <span class="keyword">String</span> str = <span class="keyword">null</span>;
+                        <span class="comment">// Cố gắng gọi phương thức trên đối tượng null</span>
+                        System.out.println(str.length());
+                    } <span class="keyword">catch</span> (NullPointerException e) {
+                        System.out.println(<span class="string">"Caught Unchecked Exception: "</span> + e);
+                    }
+                }
+            }
+            </code></pre>
+        </div>
+      </div>
+      <div class="content">
+        <b>Tóm tắt :</b>
+        <ul>
+          <i
+            ><b>Error</b> là lỗi nghiêm trọng không thể phục hồi (ví dụ:
+            OutOfMemoryError).</i
+          >
+          <li>
+            <b>Checked Exception</b> là lỗi mà bạn phải xử lý tại compile-time
+            (ví dụ: IOException).
+          </li>
+          <li>
+            <b>Unchecked Exception</b> là lỗi mà chỉ phát sinh tại runtime (ví
+            dụ: NullPointerException).
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tính đa hình trong lập trình hướng đối tượng</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 20px;
+        color: #333;
+      }
+      /* .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* border-radius: 8px; */
+      /* } */
+      h1 {
+        font-size: 24px;
+        /* text-align: center; */
+        color: black;
+        margin-bottom: 20px;
+        font-weight: bold; /* In đậm tiêu đề */
+      }
+      h3 {
+        font-size: 18px;
+        color: black;
+        margin-top: 20px;
+        font-weight: bold;
+      }
+      p {
+        line-height: 1.6;
+      }
+      pre {
+        border-radius: 10px; /* Bo góc của border */
+        /* padding: 10px; Thêm khoảng cách giữa nội dung và border */
+        width: 100%;
+        background-color: rgb(231, 233, 235);
+        color: black;
+        font-style: italic;
+      }
+      /* .code {
+            background-color: #f4f4f4;
+            border-left: 4px solid #0073e6;
+            padding: 10px;
+            margin: 15px 0;
+            font-family: monospace;
+            overflow-x: auto;
+            border-radius: 5px;
+        } */
+      .code {
+        background-color: #cdd9e5;
+        padding-top: 10px;
+        border-radius: 10px;
+        width: 65%;
+      }
+      .code-title {
+        padding-left: 10px;
+        font-style: italic;
+      }
+      .note {
+        background-color: #e7f3fe;
+        border-left: 6px solid #2196f3;
+        padding: 10px;
+        margin: 15px 0;
+        width: 65%;
+        border-radius: 10px;
+      }
+      .note b {
+        color: #0073e6;
+      }
+      .highlight {
+        color: #d9534f;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-content">
+      <h1>Tính đa hình trong lập trình hướng đối tượng</h1>
+      <p>
+        <b>Polymorphism</b> là từ được cấu thành từ 2 từ Hy Lạp là poly và
+        morhps, nếu hiểu theo nghĩa tiếng anh thì từ này có nghĩa là
+        <b>one thing in many form</b>, nghe thì có vẻ khó hiểu <br />
+        nhưng nếu nhìn vào các ví dụ bên dưới thì bạn sẽ hình dung ra được thế
+        nào là <b>one thing in many form</b>.
+      </p>
+      <p>
+        Tính đa hình được thể hiện trong code dưới 3 hình thức: nạp chồng phương
+        thức, ghi đè phương thức và đa hình thông qua các đối tượng đa hình
+        (polymorphic objects).
+      </p>
+      <h3>
+        Ví dụ: Hãy xem xét ví dụ về tính đa hình trong Java sử dụng lớp cha
+        "Hình" và các lớp con "Hình Tròn" và "Hình Vuông."
+      </h3>
+      <!-- khung code -->
+      <div class="code">
+        <!-- chữ code -->
+        <span class="code-title"><b>Code</b></span>
+        <!-- code bên trong khung code -->
+        <pre>
+           // Lớp cha "Hình"
+          class Shape {
+              void draw() {
+                  System.out.println("Vẽ hình...");
+              }
+          }
+
+          // Lớp con "Hình Tròn"
+          class Circle extends Shape {
+              void draw() {
+                  System.out.println("Vẽ hình tròn...");
+              }
+          }
+
+          // Lớp con "Hình Vuông"
+          class Square extends Shape {
+              void draw() {
+                  System.out.println("Vẽ hình vuông...");
+              }
+
+          </pre
+        >
+      </div>
+      <p>
+        Trong ví dụ này, lớp cha "Hình" có một phương thức <b>draw</b> mà các
+        lớp con "Hình Tròn" và "Hình Vuông" ghi đè (override). <br />
+        Điều này có nghĩa là mỗi lớp con có cùng tên phương thức <b>draw</b>,
+        nhưng chúng thực hiện hành động riêng biệt.
+      </p>
+      <p>
+        Tính đa hình giúp tạo ra mã nguồn linh hoạt và dễ bảo trì. Nó cho phép
+        bạn viết các phương thức chung mà có thể được sử dụng trên nhiều lớp
+        khác nhau, <br />
+        giúp giảm sự lặp lại mã và tạo ra mã nguồn dễ mở rộng.
+      </p>
+    </div>
+  </body>
+</html>

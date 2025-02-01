@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./code.css" />
+  </head>
+  <body>
+    <div class="container-content">
+      <h1 class="title">Override và Overridden Methods</h1>
+      <h3 class="child-title"><b>1. Khái niệm về Override</b></h3>
+      <div class="content">
+        <ul>
+          <li>
+            Override là khi 1 class con kế thừa từ class cha funtions nhưng
+            không muốn hoạt động theo cách giống class cha (supper class)
+          </li>
+        </ul>
+      </div>
+
+      <h3 class="child-title"><b>2. Cách triễn khai Override</b></h3>
+      <div class="content">
+        <div class="code">
+          <span class="code-title"><b>Code</b></span>
+          <pre><code class="language-java">
+            <span class="keyword">class</span> <span class="class-name">Animal</span> {
+                <span class="keyword">void</span> sound() {
+                    System.out.println(<span class="string">"Animal makes a sound"</span>); <span class="comment">// Phương thức sound trong lớp Animal</span>
+                }
+            }
+            
+            <span class="keyword">class</span> <span class="class-name">Dog</span> <span class="keyword">extends</span> Animal {
+                @<span class="annotation">Override</span>
+                <span class="keyword">void</span> sound() {
+                    System.out.println(<span class="string">"Dog barks"</span>); <span class="comment">// Phương thức sound trong lớp Dog (ghi đè từ lớp Animal)</span>
+                }
+            }
+            
+            Animal myDog = <span class="keyword">new</span> Dog(); <span class="comment">// Tạo đối tượng Dog kiểu Animal</span>
+            myDog.sound(); <span class="comment">// Output: Dog barks</span>
+            </code></pre>
+        </div>
+      </div>
+      <div class="content"></div>
+    </div>
+  </body>
+</html>

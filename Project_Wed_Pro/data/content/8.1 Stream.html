@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./code.css" />
+  </head>
+
+  <body>
+    <div class="container-content">
+      <h1 class="title">Các lớp Stream cơ bản:</h1>
+      <h3 class="child-title"><b>Byte Stream:</b></h3>
+      <div class="content">
+        <ol>
+          <li>
+            <b>Input Stream:</b>
+            <ul>
+              <li><b>FileInputStream:</b> Đọc dữ liệu từ file.</li>
+              <li>
+                <b>BufferedInputStream:</b> Đọc dữ liệu hiệu quả hơn với bộ đệm.
+              </li>
+              <li>
+                <b>DataInputStream:</b> Đọc dữ liệu nguyên thủy (primitive
+                types).
+              </li>
+            </ul>
+          </li>
+          <li>
+            <b>Output Stream:</b>
+            <ul>
+              <li><b>FileInputStream:</b> Ghi dữ liệu vào file.</li>
+              <li>
+                <b>BufferedInputStream:</b> Ghi dữ liệu hiệu quả hơn với bộ đệm.
+              </li>
+              <li>
+                <b>DataInputStream:</b> Ghi dữ liệu nguyên thủy (primitive
+                types).
+              </li>
+            </ul>
+          </li>
+        </ol>
+        <h3 class="child-title"><b>Character Stream:</b></h3>
+        <ol>
+          <li>
+            <b>Reader:</b>
+            <ul>
+              <li><b>FileReader:</b> Đọc dữ liệu từ file.</li>
+              <li>
+                <b>BufferedReader:</b> Đọc dữ liệu hiệu quả hơn với bộ đệm.
+              </li>
+              <li>
+                <b>InputStreamReader:</b> Chuyển byte thành ký tự (thường dùng
+                với mã hóa).
+              </li>
+            </ul>
+          </li>
+          <li>
+            <b>Writer:</b>
+            <ul>
+              <li><b>FileWriter:</b> Ghi dữ liệu vào file.</li>
+              <li>
+                <b>BufferedWriter:</b> Ghi dữ liệu hiệu quả hơn với bộ đệm.
+              </li>
+              <li><b>OutputStreamWriter:</b> Chuyển ký tự thành byte.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+      <h3><b>FileInputStream (Đọc dữ liệu từ file):</b></h3>
+      <!-- khung code -->
+      <div class="code">
+        <!-- chữ code -->
+        <span class="code-title"><b>Code</b></span>
+        <!-- code bên trong khung code -->
+        <pre><code class="language-java">
+            import java.io.FileInputStream;
+            import java.io.IOException;
+            
+            public class FileInputStreamExample {
+                public static void main(String[] args) {
+                    try (FileInputStream fis = new FileInputStream("input.txt")) {
+                        int data;
+                        while ((data = fis.read()) != -1) {
+                            System.out.print((char) data);
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            </code></pre>
+      </div>
+      <h3><b>BufferedInputStream (Đọc dữ liệu hiệu quả hơn với bộ đệm):</b></h3>
+      <!-- khung code -->
+      <div class="code">
+        <!-- chữ code -->
+        <span class="code-title"><b>Code</b></span>
+        <!-- code bên trong khung code -->
+        <pre><code class="language-java">
+            import java.io.BufferedInputStream;
+            import java.io.FileInputStream;
+            import java.io.IOException;
+
+            public class BufferedInputStreamExample {
+                public static void main(String[] args) {
+                    try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream("input.txt"))) {
+                        int data;
+                        while ((data = bis.read()) != -1) {
+                            System.out.print((char) data);
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            </code></pre>
+      </div>
+      <h3><b>DataInputStream (Đọc dữ liệu nguyên thủy):</b></h3>
+      <!-- khung code -->
+      <div class="code">
+        <!-- chữ code -->
+        <span class="code-title"><b>Code</b></span>
+        <!-- code bên trong khung code -->
+        <pre><code class="language-java">
+            import java.io.DataInputStream;
+            import java.io.FileInputStream;
+            import java.io.IOException;
+
+            public class DataInputStreamExample {
+                public static void main(String[] args) {
+                    try (DataInputStream dis = new DataInputStream(new FileInputStream("datafile.dat"))) {
+                        int i = dis.readInt();
+                        double d = dis.readDouble();
+                        System.out.println("Int: " + i);
+                        System.out.println("Double: " + d);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            </code></pre>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tính kế thừa trong lập trình hướng đối tượng</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 20px;
+        color: #333;
+      }
+      /* .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        } */
+      h1 {
+        font-size: 24px;
+        /* text-align: center; */
+        color: black;
+        margin-bottom: 20px;
+        font-weight: bold; /* In đậm tiêu đề */
+      }
+      h3 {
+        font-size: 18px;
+        color: black;
+        margin-top: 20px;
+        font-weight: bold;
+      }
+      p {
+        line-height: 1.6;
+      }
+      pre {
+        border-radius: 10px; /* Bo góc của border */
+        /* padding: 10px; Thêm khoảng cách giữa nội dung và border */
+        width: 100%;
+        background-color: rgb(231, 233, 235);
+        color: black;
+        font-style: italic;
+      }
+      /* .code {
+            background-color: #f4f4f4;
+            border-left: 4px solid #0073e6;
+            padding: 10px;
+            margin: 15px 0;
+            font-family: monospace;
+            overflow-x: auto;
+            border-radius: 5px;
+        } */
+      .code {
+        background-color: #cdd9e5;
+        padding-top: 10px;
+        border-radius: 10px;
+        width: 65%;
+      }
+      .code-title {
+        padding-left: 10px;
+        font-style: italic;
+      }
+      .note {
+        background-color: #e7f3fe;
+        border-left: 6px solid #2196f3;
+        padding: 10px;
+        margin: 15px 0;
+        width: 65%;
+        border-radius: 10px;
+      }
+      .note b {
+        color: #0073e6;
+      }
+      .highlight {
+        color: #d9534f;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-content">
+      <h1>Tính kế thừa trong lập trình hướng đối tượng</h1>
+      <p>
+        <b>Tính kế thừa</b> giúp tái sử dụng mã nguồn và tạo ra cấu trúc phân
+        cấp cho các lớp. <br />Điều này cho phép bạn xây dựng các lớp mới trên
+        cơ sở của các lớp đã có, tiết kiệm thời gian và công sức, đồng thời duy
+        trì tính nhất quán trong mã nguồn.
+      </p>
+
+      <p>
+        Trong ngôn ngữ lập trình Java, để kế thừa một lớp bạn dùng từ khóa
+        <code>extends</code>. Hãy xem xét ví dụ sau:
+      </p>
+      <h3>Ví dụ: Kế thừa giữa lớp "Động Vật" và lớp con "Chó"</h3>
+      <!-- khung code -->
+      <div class="code">
+        <!-- chữ code -->
+        <span class="code-title"><b>Code</b></span>
+        <!-- code bên trong khung code -->
+        <pre>
+            // Lớp cha "Động Vật"
+            class Animal {
+                void eat() {
+                    System.out.println("Động vật đang ăn...");
+                }
+            }
+            
+            // Lớp con "Chó" kế thừa từ lớp "Động Vật"
+            class Dog extends Animal {
+                void bark() {
+                    System.out.println("Chó sủa...");
+                }
+            }
+          </pre
+        >
+      </div>
+      <p>
+        Trong ví dụ này, lớp <b>"Chó" (Dog)</b> kế thừa từ lớp
+        <b>"Động Vật" (Animal)</b>. <br />
+        Điều này có nghĩa là lớp "Chó" có mọi thông tin và hành vi của lớp "Động
+        Vật," và nó cũng có thể có các phương thức và thuộc tính riêng của nó.
+      </p>
+
+      <h3>Ưu điểm của tính kế thừa</h3>
+      <div class="note">
+        <p>
+          <b>1. Tái sử dụng mã nguồn:</b> Tính kế thừa cho phép bạn sử dụng lại
+          mã nguồn đã tồn tại trong các lớp cha, giúp giảm lặp lại mã và tiết
+          kiệm thời gian lập trình.
+        </p>
+      </div>
+      <div class="note">
+        <p>
+          <b>2. Tạo cấu trúc phân cấp:</b> Bằng cách xây dựng các lớp con trên
+          cơ sở của các lớp cha, bạn có thể tạo ra cấu trúc phân cấp cho các đối
+          tượng, làm cho mã nguồn trở nên dễ quản lý hơn.
+        </p>
+      </div>
+      <div class="note">
+        <p>
+          <b>3. Mở rộng tính năng:</b> Bạn có thể thêm các phương thức và thuộc
+          tính mới vào lớp con mà không làm ảnh hưởng đến lớp cha, giúp bạn mở
+          rộng tính năng của ứng dụng một cách dễ dàng.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

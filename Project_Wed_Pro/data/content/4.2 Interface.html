@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./code.css" />
+  </head>
+  <body>
+    <div class="container-content">
+      <h1 class="title">Interface</h1>
+      <h3 class="child-title"><b>1. Khái niệm về Interface</b></h3>
+      <div class="content">
+        <ul>
+          <li>Là một bảng hợp đồng giữa các class.</li>
+          <li>
+            Nó bắt buộc các class phải triễn khai Override toàn bộ các phương
+            thức trong nó
+          </li>
+        </ul>
+      </div>
+
+      <h3 class="child-title"><b>2. Cách triễn khai Interface</b></h3>
+      <div class="content">
+        <div class="code">
+          <span class="code-title"><b>Code</b></span>
+          <pre><code class="language-java">
+            <span class="keyword">interface</span> <span class="interface-name">Animal</span> {
+                <span class="keyword">void</span> eat(); <span class="comment">// Phương thức ăn</span>
+            }
+            
+            <span class="keyword">interface</span> <span class="interface-name">Bird</span> {
+                <span class="keyword">void</span> fly(); <span class="comment">// Phương thức bay</span>
+            }
+            
+            <span class="keyword">class</span> <span class="class-name">Eagle</span> <span class="keyword">implements</span> Animal, Bird {
+                <span class="keyword">public void</span> eat() {
+                    System.out.println(<span class="string">"Eagle eats"</span>); <span class="comment">// Triển khai phương thức eat</span>
+                }
+            
+                <span class="keyword">public void</span> fly() {
+                    System.out.println(<span class="string">"Eagle flies"</span>); <span class="comment">// Triển khai phương thức fly</span>
+                }
+            }
+            
+            Eagle eagle = <span class="keyword">new</span> Eagle(); <span class="comment">// Tạo đối tượng Eagle</span>
+            eagle.eat(); <span class="comment">// Output: Eagle eats</span>
+            eagle.fly(); <span class="comment">// Output: Eagle flies</span>
+            </code></pre>
+        </div>
+      </div>
+      <div class="content"></div>
+    </div>
+  </body>
+</html>

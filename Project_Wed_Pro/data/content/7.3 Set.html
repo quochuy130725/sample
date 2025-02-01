@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./code.css" />
+  </head>
+  <body>
+    <div class="container-content">
+      <h1 class="title">7.3 Set</h1>
+      <h3><b>Sơ lược về set</b></h3>
+      <div class="content">
+        <ul>
+          <li>Không cho phép chứa phần tử trùng lặp.</li>
+          <li>Không duy trì thứ tự phần tử.</li>
+          <li>
+            Các lớp triển khai phổ biến:
+            <ul>
+              <li>
+                <b>HashSet:</b> Sử dụng bảng băm để lưu trữ, hiệu suất cao.
+              </li>
+              <li>
+                <b>TreeSet:</b> Lưu trữ phần tử theo thứ tự tăng dần, sử dụng
+                cây đỏ-đen.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <h3><b>Các phương thức cơ bản</b></h3>
+      <div class="content">
+        <span><b>Thêm phần tử: </b></span>
+
+        <span class="keyword">add</span>(<span class="data-type">E</span>
+        element) Set sẽ không thêm nếu phần tử đã tồn tại.
+
+        <div class="code">
+          <span class="code-title"><b>Code</b></span>
+          <pre><code class="language-java">
+   <span class="keyword">import</span> java.util.HashSet;
+   <span class="keyword">HashSet</span><<span class="data-type">Integer</span>> set  = <span class="keyword">new</span> <span class="keyword">HashSet</span><>(); 
+   set.<span class="keyword">add</span>(<span class="number">10</span>);  
+   set.<span class="keyword">add</span>(<span class="number">20</span>);  
+   set.<span class="keyword">add</span>(<span class="number">10</span>); <span class="comment">// Bị bỏ qua vì trùng lặp</span>
+   System.out.println(<span class="string">"Tập hợp: "</span> + set);  <span class="comment">//Tập hợp: [10, 20]</span>
+          </code></pre>
+        </div>
+        <span><b>Xóa phần tử: </b></span>
+        <span class="keyword">remove</span>(<span class="data-type"
+          >Object</span
+        >
+        o).
+        <div class="code">
+          <span class="code-title"><b>Code</b></span>
+          <pre><code class="language-java">
+   <span class="keyword">import</span> java.util.HashSet;
+   <span class="keyword">HashSet</span><<span class="data-type">Integer</span>> set  = <span class="keyword">new</span> <span class="keyword">HashSet</span><>(); 
+   set.<span class="keyword">add</span>(<span class="number">10</span>);  
+   set.<span class="keyword">add</span>(<span class="number">20</span>);
+   set.<span class="keyword">remove</span>(<span class="number">10</span>);
+   System.out.println(<span class="string">"Tập hợp: "</span> + set);  <span class="comment">//Tập hợp: [20]</span>           
+          </code></pre>
+        </div>
+        <span><b>Tìm kiếm phần tử: </b></span>
+        <span class="keyword">contains</span>(<span class="data-type"
+          >Object</span
+        >
+        o) để kiểm tra sự tồn tại sẽ trả về giá trị boolean.
+        <div class="code">
+          <span class="code-title"><b>Code</b></span>
+          <pre><code class="language-java">
+   <span class="keyword">import</span> java.util.HashSet;
+   <span class="keyword">HashSet</span><<span class="data-type">Integer</span>> set  = <span class="keyword">new</span> <span class="keyword">HashSet</span><>(); 
+   set.<span class="keyword">add</span>(<span class="number">10</span>);  
+   set.<span class="keyword">add</span>(<span class="number">20</span>);
+   System.out.println(set.<span class="keyword">contains</span>(<span
+            class="number"
+            >10</span
+          >)); <span class="comment">//true</span>     
+        </code></pre>
+        </div>
+        <span><b>Sắp xếp các phần tử: </b></span>
+        <div>
+          <ul>
+            <li>
+              TreeSet: Tự động sắp xếp theo thứ tự tự nhiên hoặc do Comparator
+              cung cấp.
+            </li>
+            <li>
+              Khi tạo tree set thì nó sẽ tự sắp xếp, nên các bài toán liên quan
+              tới Set cần sắp xếp thì chúng ta sẽ tạo TreeSet.
+            </li>
+          </ul>
+        </div>
+        <!-- code -->
+        <div class="code">
+          <span class="code-title"><b>Code</b></span>
+          <pre><code class="language-java">
+   <span class="keyword">import</span> java.util.TreeSet;  
+   <span class="keyword">TreeSet</span><<span class="data-type">Integer</span>> set = <span class="keyword">new</span> <span class="keyword">TreeSet</span><>(); 
+   set.<span class="keyword">add</span>(<span class="number">10</span>);
+   set.<span class="keyword">add</span>(<span class="number">40</span>);  
+   set.<span class="keyword">add</span>(<span class="number">30</span>);  
+   set.<span class="keyword">add</span>(<span class="number">20</span>);
+   <span class="comment">//Các phần tử trong TreeSet sẽ tự động sắp xếp</span>
+   System.out.println(<span class="string">"Các phần tử trong TreeSet: "</span> + treeSet); <span class="comment">//Các phần tử trong TreeSet: [10, 20, 30, 40] </span>        
+          </code></pre>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

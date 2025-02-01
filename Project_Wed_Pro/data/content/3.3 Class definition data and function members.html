@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu về lớp (class) trong Java</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 20px;
+            color: #333;
+        }
+        /* .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        } */
+        h1 {
+            font-size: 24px;
+            /* text-align: center; */
+            color: black;
+            margin-bottom: 20px;
+            font-weight: bold; /* In đậm tiêu đề */
+        }
+        h3 {
+            font-size: 18px;
+            color: black;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        p {
+            line-height: 1.6;
+        }
+        pre {
+            border-radius: 10px; /* Bo góc của border */
+            /* padding: 10px; Thêm khoảng cách giữa nội dung và border */
+            width: 100%;
+            background-color: rgb(231, 233, 235);
+            color: black;
+            font-style: italic;
+          }
+        /* .code {
+            background-color: #f4f4f4;
+            border-left: 4px solid #0073e6;
+            padding: 10px;
+            margin: 15px 0;
+            font-family: monospace;
+            overflow-x: auto;
+            border-radius: 5px;
+        } */
+        .code {
+            background-color: #cdd9e5;
+            padding-top: 10px;
+            border-radius: 10px;
+            width: 65%;
+          }
+          .code-title {
+            padding-left: 10px;
+            font-style: italic;
+          }
+        .note {
+            background-color: #e7f3fe;
+            border-left: 6px solid #2196F3;
+            padding: 10px;
+            margin: 15px 0;
+            width: 65%;
+            border-radius: 10px;
+        }
+        .note b {
+            color: #0073e6;
+        }
+        .highlight {
+            color: #d9534f;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-content">
+        <h1>Giới thiệu về lớp (class) trong Java</h1>
+        
+        <h3>1. Ví dụ về lớp (class)</h3>
+        <!-- khung code -->
+        <div class="code">
+          <!-- chữ code -->
+          <span class="code-title"><b>Code</b></span>
+          <!-- code bên trong khung code -->
+          <pre>
+            class Student {
+                String name;
+                int age;
+            
+                public void display() {
+                    System.out.println("Name: " + name);
+                    System.out.println("Age: " + age);
+                }
+            }
+            
+            public class Entry {
+                public static void main(String[] args) {
+                    Student student1 = new Student();
+                    student1.name = "Linh";
+                    student1.age = 24;
+                    student1.display();
+                }
+            }
+          </pre>
+        </div>
+        <p>Ví dụ này giúp bạn hiểu một số thành phần cơ bản của lớp (class):</p>
+        <div class="note">
+            <p><b>Lớp (class):</b> Là nơi định nghĩa thông tin về các đối tượng. Bạn có thể hiểu lớp là một kiểu dữ liệu mà biến của kiểu này được coi như một đối tượng.</p>
+            <p><b>Ví dụ:</b> Học sinh, giáo viên, xe ô tô, ...</p>
+        </div>
+        <div class="note">
+            <p><b>Đối tượng (object):</b> Là một thể hiện của lớp. Ví dụ, <code>student1</code> là một đối tượng đại diện cho thông tin của một học sinh.</p>
+        </div>
+        <div class="note">
+            <p><b>Thuộc tính (attribute):</b> Là các đặc điểm của đối tượng. Ví dụ, <code>name</code> và <code>age</code> là hai thuộc tính của đối tượng học sinh.</p>
+        </div>
+        <div class="note">
+            <p><b>Phương thức (method):</b> Là hành vi của đối tượng. Ví dụ, <code>display()</code> là một phương thức dùng để giới thiệu bản thân của học sinh.</p>
+        </div>
+
+        <h3>2. Cú pháp khai báo lớp</h3>
+        <!-- khung code -->
+        <div class="code">
+          <!-- chữ code -->
+          <span class="code-title"><b>Code</b></span>
+          <!-- code bên trong khung code -->
+          <pre>
+            class <Tên_Lớp> {
+                // Khai báo thuộc tính
+                <Kiểu_Dữ_Liệu> <Tên_Thuộc_Tính>;
+            
+                // Khai báo phương thức
+                public <Kiểu_Trả_Về> <Tên_Phương_Thức>(<Tham_Số>) {
+                    // Thân phương thức
+                }
+            }
+          </pre>
+        </div>
+    
+        <h3>3. Ví dụ khai báo lớp Student</h3>
+        <!-- khung code -->
+        <div class="code">
+          <!-- chữ code -->
+          <span class="code-title"><b>Code</b></span>
+          <!-- code bên trong khung code -->
+          <pre>
+            class Student {
+                String name;
+                int age;
+            
+                public void getInformation() {
+                    // Logic để nhập thông tin
+                }
+            
+                public void display() {
+                    System.out.println("Name: " + name);
+                    System.out.println("Age: " + age);
+                }
+            }
+        </pre>
+        </div>
+
+        <h3>4. Tạo đối tượng từ lớp</h3>
+        <p>Để tạo đối tượng từ lớp, bạn dùng từ khóa <code>new</code>. Ví dụ:</p>
+        <!-- khung code -->
+        <div class="code">
+          <!-- chữ code -->
+          <span class="code-title"><b>Code</b></span>
+          <!-- code bên trong khung code -->
+          <pre>
+            Student s1 = new Student();
+            s1.name = "Long";
+            s1.display();
+          </pre>
+        </div>
+
+    </div>
+</body>
+</html>

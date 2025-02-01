@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lớp truy xuất trong tính kế thừa của OOP</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 20px;
+        color: #333;
+      }
+      /* .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        } */
+      h1 {
+        font-size: 24px;
+        color: black;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+      h3 {
+        font-size: 18px;
+        color: black;
+        margin-top: 20px;
+        font-weight: bold;
+      }
+      p {
+        line-height: 1.6;
+      }
+      pre {
+        border-radius: 10px;
+        width: 100%;
+        background-color: rgb(231, 233, 235);
+        color: black;
+        font-style: italic;
+      }
+      .code {
+        background-color: #cdd9e5;
+        padding-top: 10px;
+        border-radius: 10px;
+        width: 65%;
+      }
+      .code-title {
+        padding-left: 10px;
+        font-style: italic;
+      }
+      .note {
+        background-color: #e7f3fe;
+        border-left: 6px solid #2196f3;
+        padding: 10px;
+        margin: 15px 0;
+        width: 65%;
+        border-radius: 10px;
+      }
+      .note b {
+        color: #0073e6;
+      }
+      .highlight {
+        color: #d9534f;
+        font-weight: bold;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* CSS media query for small screens */
+      @media screen and (max-width: 900px) {
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-content">
+      <h1>Lớp truy xuất trong tính kế thừa của OOP</h1>
+      <p>Giả sử ta có 2 biểu đồ lớp như sau:</p>
+      <img
+        src="https://s3-sgn09.fptcloud.com/codelearnstorage/Media/Default/Users/linhdk13_40fpt_2Ecom/linhdk13/810176-1.png"
+        alt="Biểu đồ lớp 1"
+      />
+      <p>
+        Chắc bạn cũng đã nhận thấy được vấn đề khi nhìn vào sơ đồ này, đó là lớp
+        <b>Student</b> và lớp <b>Teacher</b> có chung quá nhiều thuộc tính và
+        phương thức. <br />
+        Để giải quyết vấn đề này, ta sử dụng tính kế thừa
+      </p>
+      <p>
+        Kế thừa trong lập trình hướng đối tượng chính là thừa hưởng lại những
+        thuộc tính và phương thức của một lớp. <br />
+        Có nghĩa là nếu lớp A kế thừa lớp B thì lớp A sẽ có những thuộc tính và
+        phương thức của lớp B. <br />
+        Do đó, từ sơ đồ trên bạn có thể tách các thuộc tính và phương thức trùng
+        nhau ra một lớp mới tên là <b>Person</b> và cho lớp <b>Student</b> và
+        <b>Teacher</b> kế thừa lớp này giống như sau:
+      </p>
+      <img
+        src="https://s3-sgn09.fptcloud.com/codelearnstorage/Media/Default/Users/linhdk13_40fpt_2Ecom/linhdk13/810176-2.png"
+        alt="Biểu đồ lớp 2"
+      />
+      <p>
+        Có thể thấy với sơ đồ này lớp <b>Student</b> và <b>Teacher</b> sẽ thừa
+        hưởng lại các thuộc tính chung từ lớp <b>Person</b> và code sẽ không còn
+        bị trùng lặp. <br />
+        Ở trong sơ đồ trên thì mũi tên với <b>hình tam giác rỗng ruột</b> chính
+        là ký hiệu thể hiện quan hệ kế thừa.
+      </p>
+      <p>
+        Lớp được thừa hưởng những thuộc tính và phương thức từ lớp khác được gọi
+        là <b>dẫn xuất (Derived Class)</b> hay lớp <b>Con (Subclass)</b> <br />
+        và lớp bị lớp khác kế thừa được gọi là lớp
+        <b>cơ sở (Base Class)</b> hoặc lớp <b>cha (Parent Class)</b>. <br />
+        Như ở ví dụ trên thì lớp <b>Person</b> là lớp cha (lớp cơ sở) và
+        <b>Student, Teacher</b> là hai lớp con (lớp dẫn xuất).
+      </p>
+    </div>
+  </body>
+</html>

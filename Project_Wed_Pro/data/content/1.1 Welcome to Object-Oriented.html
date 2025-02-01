@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./code.css" />
+  </head>
+  <body>
+    <div class="container-content">
+      <p class ="content-1">Giới thiệu về lập trình hướng đối tượng </p> 
+       <p class="content-2">Lập trình hướng đối tượng là gì ?</p>
+      <p>Lập trình hướng đối tượng (OOP) là phong cách lập trình sử dụng các đối tượng để mô hình hóa các thực thể trong thế giới thực như kế thừa, đóng gói, đa hình, v.v. Mục tiêu chính của OOP là kết hợp dữ liệu và các hàm xử lý dữ liệu để bảo vệ dữ liệu, ngăn truy cập trái phép từ các phần khác của chương trình.
+      </p>
+      <p class ="content-3"> OOP bao gồm: </p>
+      <ul class ="oop">
+        <li>Class</li>
+        <li>Objects</li>
+        <li>Data abstraction </li>
+        <li>Enscapsulation </li>
+        <li>Inheritance</li>
+        <li>Polymorphism</li>
+      </ul>
+      <p class ="noidung">1.Lớp (class) </p>
+      <p>Lớp là một kiểu dữ liệu do người dùng định nghĩa. Nó bao gồm các thành viên dữ liệu và các hàm thành viên, có thể được truy cập và sử dụng bằng cách tạo một thể hiện của lớp đó. Lớp đại diện cho một tập hợp các thuộc tính hoặc phương thức chung cho tất cả các đối tượng của một loại. Lớp giống như một bản thiết kế cho một đối tượng</p>
+      <p>Ví dụ: Xem xét lớp Xe ô tô. Có thể có nhiều xe ô tô với các tên và thương hiệu khác nhau, nhưng tất cả chúng đều chia sẻ một số thuộc tính chung như tất cả đều có 4 bánh xe, giới hạn tốc độ, phạm vi tiết kiệm nhiên liệu, v.v. Vậy ở đây, "Xe ô tô" là lớp, và bánh xe, giới hạn tốc độ, phạm vi tiết kiệm nhiên liệu là các thuộc tính của nó.
+      </p> <br>
+      <div class ="classXeoto">
+        <a href=""> <img src ="./data/images/codeXeoto.png"alt =""/>
+        </a>
+
+      </div>
+      
+      <p class ="noidung">2.Đối tượng (object) </p>
+      <p>Đối tượng là đơn vị cơ bản của lập trình hướng đối tượng và đại diện cho các thực thể trong đời sống thực. Một đối tượng là một thể hiện của lớp. Khi một lớp được định nghĩa, không có bộ nhớ nào được cấp phát, nhưng khi lớp được khởi tạo (tức là một đối tượng được tạo ra), bộ nhớ sẽ được cấp phát. Một đối tượng có ba đặc điểm: danh tính, trạng thái và hành vi. Mỗi đối tượng chứa dữ liệu và mã để thao tác với dữ liệu đó. Các đối tượng có thể tương tác với nhau mà không cần biết chi tiết về dữ liệu hoặc mã của nhau, chỉ cần biết kiểu thông điệp mà đối tượng chấp nhận và kiểu phản hồi mà đối tượng trả về.
+        Ví dụ: "Chó" là một đối tượng trong đời sống thực, có các đặc điểm như màu sắc, giống loài, sủa, ngủ, ăn.
+        </p> <br>
+        <div class="cho">
+          <a href=""> <img src="./data/images/codecho.png"alt=""/>
+          </a>
+
+        </div>
+
+      <p class="noidung"> 
+        3.Trừu tượng hóa dữ liệu (Data Abstraction)
+        
+      </p>
+      <p>Đóng gói là cơ chế gói dữ liệu và mã trong một đơn vị duy nhất. Trong đóng gói, các biến hoặc dữ liệu của lớp được ẩn khỏi các lớp khác và chỉ có thể truy cập thông qua các hàm thành viên của lớp đó. Vì dữ liệu trong lớp bị ẩn khỏi các lớp khác, nó còn được gọi là ẩn dữ liệu (data-hiding).</p>
+      <div class="truutuong">
+        <a href=""> <img src="./data/images/truutuong.png"alt=""/>
+        </a>
+
+
+      <p>Ví dụ về đóng gói (Encapsulation):
+        Trong một công ty, có các phòng ban như kế toán, tài chính, bán hàng, v.v. Phòng tài chính quản lý tất cả giao dịch tài chính và lưu trữ dữ liệu liên quan đến tài chính, trong khi phòng bán hàng quản lý các hoạt động bán hàng và lưu trữ dữ liệu bán hàng. Khi một nhân viên phòng tài chính cần dữ liệu bán hàng trong một tháng cụ thể, họ không được phép truy cập trực tiếp vào dữ liệu của phòng bán hàng. Thay vào đó, họ phải liên hệ với nhân viên phòng bán hàng để yêu cầu cung cấp dữ liệu. Đây chính là đóng gói: dữ liệu của phòng bán hàng và những người có thể thao tác với chúng được gói gọn dưới tên gọi "phòng bán hàng".
+        </p>
+      <p class ="noidung">5.Kế thừa (Inheritance):</p>
+      <p>Kế thừa là một đặc tính quan trọng trong OOP, cho phép một lớp kế thừa các thuộc tính và đặc điểm từ lớp khác. Khi tạo lớp mới, chúng ta không cần phải viết lại tất cả các thuộc tính và phương thức, vì chúng có thể được kế thừa từ lớp khác. Kế thừa giúp tái sử dụng mã nguồn và giảm sự dư thừa.
+      </p>
+      <div class="kethua">
+        <a href=""> <img src="./data/images/kethua.png"alt=""/>
+        </a>
+      <p class="noidung ">6.Đa hình (Polymorphism):
+      </p>
+      <p>Đa hình có nghĩa là "nhiều hình thức". Nó là khả năng một thông điệp có thể hiển thị dưới nhiều hình thức khác nhau. Ví dụ, một người có thể cùng lúc là cha, chồng và nhân viên. Người này có hành vi khác nhau trong các tình huống khác nhau. Đây chính là đa hình.</p>
+      <div class="dahinh">
+        <a href=""> <img src="./data/images/dahinh.png"alt=""/>
+        </a>
+      <p class ="noidung1">Tại sao cần lập trình hướng đối tượng (OOP):
+      </p>
+      <p>_Dễ dàng phát triển và bảo trì dự án: OOP giúp tổ chức mã nguồn rõ ràng, dễ quản lý và bảo trì trong suốt vòng đời của dự án.
+      </p>
+      <p>_Ẩn dữ liệu (Data Hiding) tốt cho bảo mật: OOP cung cấp khả năng ẩn chi tiết triển khai, bảo vệ dữ liệu khỏi sự truy cập trái phép, đảm bảo an toàn hơn cho ứng dụng.
+      </p>
+      <p>_Giải quyết các vấn đề thực tế: OOP mô phỏng các thực thể trong đời sống thực, giúp giải quyết các vấn đề phức tạp một cách dễ dàng hơn.
+      </p>
+      <p>_Tái sử dụng mã nguồn: OOP hỗ trợ kế thừa, giúp mã nguồn có thể tái sử dụng cho các lớp khác, giảm bớt việc phải viết lại mã.</p>
+      <p>_Viết mã tổng quát (Generic Code): OOP cho phép viết mã tổng quát, có thể làm việc với nhiều loại dữ liệu khác nhau mà không cần phải viết lại các đoạn mã cơ bản.
+      </p>
+     
+
+      <var></var>
+    </div>
+  </body>
+</html>

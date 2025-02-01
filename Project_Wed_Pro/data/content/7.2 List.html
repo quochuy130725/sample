@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./code.css" />
+  </head>
+  <body>
+    <div class="container-content">
+      <h1 class="title">7.2 List</h1>
+      <h3>Sơ lược về List</h3>
+      <div class="content">
+        <ul>
+          <li>Duy trì thứ tự phần tử khi thêm vào.</li>
+          <li>Cho phép chứa các phần tử trùng lặp.</li>
+          <li>
+            Các lớp triển khai phổ biến:
+            <ul>
+              <li><b>ArrayList:</b> Mảng động có hiệu suất tốt.</li>
+              <li>
+                <b>Vector:</b> Giống ArrayList nhưng hỗ trợ đồng bộ
+                (synchronized).
+              </li>
+              <li>
+                <b>LinkedList:</b> Triển khai danh sách liên kết, thích hợp khi
+                cần thêm/xóa thường xuyên.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <h3><b>Các phương thức cơ bản</b></h3>
+      <div class="content">
+        <span><b>Thêm phần tử: </b></span>
+
+        <span class="keyword">add</span>(<span class="data-type">E</span>
+        element) hoặc <span class="keyword">add</span>(<span class="data-type"
+          >int</span
+        >
+        index, <span class="data-type">E</span> element)
+
+        <div class="code">
+          <span class="code-title"><b>Code</b></span>
+          <pre><code class="language-java">
+   <span class="keyword">import</span> java.util.ArrayList;
+   <span class="keyword">ArrayList</span><<span class="data-type">String</span>> list = <span class="keyword">new</span> <span class="keyword">ArrayList</span><>(); 
+   list.<span class="keyword">add</span>(<span class="string">"Apple"</span>);  
+   list.<span class="keyword">add</span>(<span class="string">"Banana"</span>); 
+   list.<span class="keyword">add</span>(<span class="number">2</span>, <span class="string">"Cherry"</span>); 
+   System.out.println(<span class="string">"Danh sách: "</span> + list);  <span class="comment">//Danh sách: [Apple, Banana, Cherry]</span>      
+          </code></pre>
+        </div>
+        <span><b>Xóa phần tử: </b></span>
+        <span class="keyword">remove</span>(<span class="data-type">int</span>
+        index) hoặc <span class="keyword">remove</span>(<span class="data-type"
+          >Object</span
+        >
+        o).
+        <div class="code">
+          <span class="code-title"><b>Code</b></span>
+          <pre><code class="language-java">
+   <span class="keyword">import</span> java.util.ArrayList;
+   <span class="keyword">ArrayList</span><<span class="data-type">String</span>> list = <span class="keyword">new</span> <span class="keyword">ArrayList</span><>(); 
+   list.<span class="keyword">add</span>(<span class="string">"Apple"</span>);  
+   list.<span class="keyword">add</span>(<span class="string">"Banana"</span>); 
+   list.<span class="keyword">add</span>(<span class="string">"Cherry"</span>);
+   list.<span class="keyword">remove</span>(<span class="number">"0"</span>);  
+   <span class="comment">//hoặc</span>
+   list.<span class="keyword">remove</span>(<span class="string">"Apple"</span>);  
+   System.out.println(<span class="string">"Danh sách: "</span> + list);  <span class="comment">//Danh sách: [Banana, Cherry]</span>           
+          </code></pre>
+        </div>
+        <span><b>Tìm kiếm phần tử: </b></span>
+        <span class="keyword">contains</span>(<span class="data-type"
+          >Object</span
+        >
+        o) để kiểm tra sự tồn tại sẽ trả về giá trị boolean.
+        <div class="code">
+          <span class="code-title"><b>Code</b></span>
+          <pre><code class="language-java">
+   <span class="keyword">import</span> java.util.ArrayList;
+   <span class="keyword">ArrayList</span><<span class="data-type">String</span>> list = <span class="keyword">new</span> <span class="keyword">ArrayList</span><>(); 
+   list.<span class="keyword">add</span>(<span class="string">"Apple"</span>);  
+   list.<span class="keyword">add</span>(<span class="string">"Banana"</span>); 
+   list.<span class="keyword">add</span>(<span class="string">"Cherry"</span>);
+   System.out.println(list.<span class="keyword">contains</span>(<span
+            class="string"
+            >“Cherry”</span
+          >)); <span class="comment">//true</span>     
+        </code></pre>
+        </div>
+        <span><b>Sắp xếp các phần tử: </b></span> sử dụng
+        <span class="keyword">Collections.sort</span>(List<<span
+          class="data-type"
+          >T</span
+        >> ) hoặc cung cấp <span class="keyword">Comparator</span>
+        <!-- code -->
+        <div class="code">
+          <span class="code-title"><b>Code</b></span>
+          <pre><code class="language-java">
+   <span class="keyword">import</span> java.util.ArrayList; 
+   <span class="keyword">import</span> java.util.Collections; 
+   <span class="keyword">ArrayList</span><<span class="data-type">String</span>> list = <span class="keyword">new</span> <span class="keyword">ArrayList</span><>(); 
+   list.<span class="keyword">add</span>(<span class="string">"Apple"</span>);  
+   list.<span class="keyword">add</span>(<span class="string">"Cherry"</span>);
+   list.<span class="keyword">add</span>(<span class="string">"Banana"</span>); 
+   System.out.println(<span class="string">"Danh sách trước khi sắp xếp: "</span> + list); <span class="comment">//Danh sách trước khi sắp xếp: [Apple, Cherry, Banana] </span>                
+   <span class="comment">// Sắp xếp danh sách</span>
+   Collections.<span class="keyword">sort</span>(list);
+   System.out.println(<span class="string">"Danh sách sau khi sắp xếp: "</span> + list); <span class="comment">//Danh sách sau khi sắp xếp: [Apple, Banana, Cherry] </span>     
+          </code></pre>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

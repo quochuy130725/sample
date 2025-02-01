@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./code.css" />
+  </head>
+  <body>
+    <div class="container-content">
+      <h1 class="title">Array Of Object</h1>
+      <h3 class="child-title"><b>1. Khái niệm về mảng</b></h3>
+      <div class="content">
+        <ul>
+          <li>
+            Mảng (Array) là một cấu trúc dữ liệu lưu trữ tập hợp các phần tử có
+            cùng kiểu dữ liệu (int, float, char, object, …).
+          </li>
+          <li>
+            Các phần tử được lưu trữ trong bộ nhớ liên tiếp và được truy cập
+            thông qua chỉ số (index), bắt đầu từ 0.
+          </li>
+        </ul>
+      </div>
+      <h3 class="child-title"><b>2. Cách khai báo và khởi tạo mảng</b></h3>
+      <div class="content">
+        <h3><b>Khai báo mảng:</b></h3>
+        <!-- khung code -->
+        <div class="code">
+          <!-- chữ code -->
+          <span class="code-title"><b>Code</b></span>
+          <!-- code bên trong khung code -->
+          <pre><code class="language-java">
+      dataType[] arrayName;
+            </code></pre>
+        </div>
+        <h3><b>Khởi tạo mảng:</b></h3>
+        <ul>
+          <li>Khởi tạo trực tiếp với kích thước:</li>
+        </ul>
+        <div class="code">
+          <span class="code-title"><b>Code</b></span>
+          <pre><code class="language-java">
+     <span class="data-type">int[]</span> numbers = <span class="keyword">new</span> int[<span class="number">5</span>]; <span class="comment">// Mảng gồm 5 phần tử, mặc định giá trị là 0.</span>     
+            </code></pre>
+        </div>
+
+        <ul>
+          <li>Khởi tạo trực tiếp với giá trị:</li>
+        </ul>
+        <div class="code">
+          <span class="code-title"><b>Code</b></span>
+          <pre><code class="language-java">
+     <span class="data-type">int[]</span> numbers = {<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>};
+            </code></pre>
+        </div>
+        <ul>
+          <li>Khởi tạo mảng bằng cách gán giá trị sau:</li>
+        </ul>
+        <div class="code">
+          <span class="code-title"><b>Code</b></span>
+          <pre><code class="language-java">
+     <span class="data-type">int[]</span> numbers = <span class="keyword">new</span> int[<span class="number">5</span>];
+     numbers[<span class="number">0</span>] = <span class="number">10</span>;
+     numbers[<span class="number">1</span>] = <span class="number">20</span>;
+            </code></pre>
+        </div>
+      </div>
+      <h3 class="child-title"><b>3. Các thao tác cơ bản trên mảng</b></h3>
+      <div class="content">
+        <h3><b>In mảng</b></h3>
+        <ul>
+          <li>Tự in từng phần tử:</li>
+        </ul>
+        <div class="code">
+          <span class="code-title"><b>Code</b></span>
+          <pre><code class="language-java">
+     <span class="keyword">for</span>(<span class="data-type">int</span> i = <span class="number">0</span>; i < arr.length; i++) {
+       System.out.print(arr[<span class="number">i</span>] + <span class="string">" "</span>);
+     }      
+            </code></pre>
+        </div>
+        <ul>
+          <li>Sử dụng <b>Arrays.toString():</b></li>
+        </ul>
+        <div class="code">
+          <span class="code-title"><b>Code</b></span>
+          <pre><code class="language-java">
+     <span class="keyword">import</span> java.util.Arrays;  
+     <span class="data-type">int</span>[] arr = <span class="keyword">new</span> <span class="data-type">int</span>[<span class="number">5</span>]
+     System.out.println(Arrays.toString(arr)); <span class="comment">// [0, 0, 0, 0, 0]</span>     
+            </code></pre>
+        </div>
+        <!-- title của nội dung -->
+        <h3><b>Sắp xếp mảng</b></h3>
+        <!-- code bên trong -->
+        <div class="code">
+          <span class="code-title"><b>Code</b></span>
+          <pre><code class="language-java">
+     <span class="keyword">import</span> java.util.Arrays;  
+     <span class="data-type">int[]</span> numbers = {<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>};    
+     Arrays.sort(numbers);
+     System.out.println(Arrays.toString(numbers)); <span class="comment">// [1, 2, 3, 4, 5]</span>    
+    </code></pre>
+        </div>
+        <h3><b>Tìm kiếm phần tử trong mảng</b></h3>
+        <ul>
+          <li>Tìm kiếm tuyến tính</li>
+        </ul>
+
+        <ul>
+          <li>Tìm kiếm nhị phân</li>
+        </ul>
+        <div class="code">
+          <span class="code-title"><b>Code</b></span>
+          <pre><code class="language-java">
+     <span class="comment">//Yêu cầu mảng phải được sắp xếp trước.</span>
+     <span class="data-type">int</span> key = <span class="number">4</span>;
+     <span class="data-type">int</span> index = Arrays.binarySearch(numbers, key);
+     System.out.println(<span class="string">"Found at index: "</span> <span class="keyword">+</span> index);
+    </code></pre>
+        </div>
+      </div>
+      <h3 class="child-title"><b>4. Mảng động</b></h3>
+      <div class="content">
+        <p>
+          <b>Java không hỗ trợ mảng động trực tiếp</b>, nhưng bạn có thể sử dụng
+          lớp ArrayList để mô phỏng mảng động.
+        </p>
+        <div class="code">
+          <span class="code-title"><b>Code</b></span>
+          <pre><code class="language-java">
+     <span class="keyword">import</span> java.util.Arrays;
+     <span class="keyword">ArrayList</span><<span class="data-type">Integer</span>> list = <span class="keyword">new</span><span class="keyword">ArrayList</span><>();      
+     list.add(<span class="number">1</span>);
+     list.add(<span class="number">2</span>);
+     list.remove(<span class="number">0</span>);
+     System.out.println(list); <span class="comment">// [2]</span>
+    </code></pre>
+        </div>
+      </div>
+      <h3 class="child-title"><b>5. Ưu nhược điểm của mảng</b></h3>
+      <div class="content">
+        <h3><b>Ưu điểm:</b></h3>
+        <p class="content">
+          Dễ sử dụng và hiệu quả trong việc lưu trữ dữ liệu đồng nhất. Tốc độ
+          truy cập nhanh.
+        </p>
+        <h3><b>Nhược điểm:</b></h3>
+        <p class="content">
+          Kích thước cố định, không thể thay đổi trong quá trình chạy. Khó quản
+          lý và thao tác khi kích thước lớn.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

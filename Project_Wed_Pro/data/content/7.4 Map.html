@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./code.css" />
+  </head>
+  <body>
+    <div class="container-content">
+      <h1 class="title">7.4 Map</h1>
+      <h3><b>Sơ lược về Map</b></h3>
+      <div class="content">
+        <ul>
+          <li>
+            Chứa các cặp key-value. </br>
+            VD: trong map lưu 1 đối tượng là (0, 2) thì 0
+            là key và 2 là value.
+          </li>
+          <li>Mỗi key là duy nhất, value có thể trùng lặp.</li>
+          <li>Các lớp triển khai phổ biến:
+            <ul>
+              <li><b>HashMap:</b> Lưu trữ key-value trong bảng băm, thứ tự không được đảm bảo.
+              </li>
+              <li><b>TreeMap:</b> Sắp xếp key theo thứ tự tự nhiên.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <h3><b>Các phương thức cơ bản</b></h3>
+      <div class="content">
+        <span><b>Thêm phần tử: </b></span>
+
+        <span class="keyword">put</span>(<span class="data-type">K</span>
+        key, <span class="data-type">V</span>
+        value) Set sẽ không thêm nếu phần tử đã tồn tại.
+
+        <div class="code">
+          <span class="code-title"><b>Code</b></span>
+          <pre><code class="language-java">
+   <span class="keyword">import</span> java.util.HashMap;
+   <span class="keyword">HashMap</span><<span class="data-type">Integer</span>, <span class="data-type">String</span>> map  = <span class="keyword">new</span> <span class="keyword">HashMap</span><>(); 
+   map.<span class="keyword">put</span>(<span class="number">1</span>, <span class="string">"One"</span>);  
+   map.<span class="keyword">put</span>(<span class="number">2</span>, <span class="string">"Two"</span>);
+   System.out.println(<span class="string">"Ánh xạ: "</span> + map);  <span class="comment">//Ánh xạ: {1=One, 2=Two}</span>
+          </code></pre>
+        </div>
+        <span><b>Xóa phần tử: </b></span>
+        <span class="keyword">remove</span>(<span class="data-type"
+          >Object</span
+        >
+        key).
+        <div class="code">
+          <span class="code-title"><b>Code</b></span>
+          <pre><code class="language-java">
+   <span class="keyword">import</span> java.util.HashMap;
+   <span class="keyword">HashMap</span><<span class="data-type">Integer</span>, <span class="data-type">String</span>> map  = <span class="keyword">new</span> <span class="keyword">HashMap</span><>(); 
+   map.<span class="keyword">put</span>(<span class="number">1</span>, <span class="string">"One"</span>);  
+   map.<span class="keyword">put</span>(<span class="number">2</span>, <span class="string">"Two"</span>);
+   map.<span class="keyword">remove</span>(<span class="number">1</span>);
+   System.out.println(<span class="string">"Ánh xạ: "</span> + map);  <span class="comment">//Ánh xạ: {2=Two}</span>         
+          </code></pre>
+        </div>
+        <span><b>Tìm kiếm phần tử: </b></span>
+        <span class="keyword">containsKey</span>(<span class="data-type"
+          >Object</span
+        >
+        key) hoặc <span class="keyword">containsValue</span>(<span class="data-type"
+        >Object</span
+      >
+      value)
+        <div class="code">
+          <span class="code-title"><b>Code</b></span>
+          <pre><code class="language-java">
+   <span class="keyword">import</span> java.util.HashMap;
+   <span class="keyword">HashMap</span><<span class="data-type">Integer</span>, <span class="data-type">String</span>> map  = <span class="keyword">new</span> <span class="keyword">HashMap</span><>(); 
+   map.<span class="keyword">put</span>(<span class="number">1</span>, <span class="string">"One"</span>);  
+   map.<span class="keyword">put</span>(<span class="number">2</span>, <span class="string">"Two"</span>);
+   System.out.println(set.<span class="keyword">containsKey</span>(<span
+            class="number"
+            >2</span
+          >)); <span class="comment">//true</span>    
+   System.out.println(set.<span class="keyword">containsValue</span>(<span
+            class="string"
+            >"Two"</span
+          >)); <span class="comment">//true</span>  
+        </code></pre>
+        </div>
+        <span><b>Sắp xếp các phần tử: </b></span>
+        <div>
+          <ul>
+            <li>
+              TreeMap: Tự động sắp xếp theo thứ tự tự nhiên hoặc do Comparator cung cấp.
+            </li>
+            <li>
+              Giống như set, khi gặp bài toán về Map và có liên quan tới sắp xếp thì chúng ta sẽ tạo TreeMap
+            </li>
+          </ul>
+        </div>
+        <!-- code -->
+        <div class="code">
+          <span class="code-title"><b>Code</b></span>
+          <pre><code class="language-java">
+   <span class="keyword">import</span> java.util.TreeMap;  
+   <span class="keyword">TreeMap</span><<span class="data-type">Integer</span>, <span class="data-type">String</span>> map  = <span class="keyword">new</span> <span class="keyword">TreeMap</span><>(); 
+   map.<span class="keyword">put</span>(<span class="number">1</span>, <span class="string">"One"</span>);  
+   map.<span class="keyword">put</span>(<span class="number">4</span>, <span class="string">"Four"</span>);  
+   map.<span class="keyword">put</span>(<span class="number">3</span>, <span class="string">"Three"</span>);
+   map.<span class="keyword">put</span>(<span class="number">2</span>, <span class="string">"Two"</span>);
+   <span class="comment">//Các phần tử trong TreeMap sẽ tự động sắp xếp</span>
+   System.out.println(<span class="string">"Các phần tử trong TreeSet: "</span> + treeMap); <span class="comment">//Các phần tử trong TreeMap: {1=One, 2=Two, 3=Three, 4=Four} </span>        
+          </code></pre>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>

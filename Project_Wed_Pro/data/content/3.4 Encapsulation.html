@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tính đóng gói trong lập trình hướng đối tượng</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 20px;
+        color: #333;
+      }
+      /* .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        } */
+      h1 {
+        font-size: 24px;
+        /* text-align: center; */
+        color: black;
+        margin-bottom: 20px;
+        font-weight: bold; /* In đậm tiêu đề */
+      }
+      h3 {
+        font-size: 18px;
+        color: black;
+        margin-top: 20px;
+        font-weight: bold;
+      }
+      p {
+        line-height: 1.6;
+      }
+      pre {
+        border-radius: 10px; /* Bo góc của border */
+        /* padding: 10px; Thêm khoảng cách giữa nội dung và border */
+        width: 100%;
+        background-color: rgb(231, 233, 235);
+        color: black;
+        font-style: italic;
+      }
+      /* .code {
+            background-color: #f4f4f4;
+            border-left: 4px solid #0073e6;
+            padding: 10px;
+            margin: 15px 0;
+            font-family: monospace;
+            overflow-x: auto;
+            border-radius: 5px;
+        } */
+      .code {
+        background-color: #cdd9e5;
+        padding-top: 10px;
+        border-radius: 10px;
+        width: 65%;
+      }
+      .code-title {
+        padding-left: 10px;
+        font-style: italic;
+      }
+      .note {
+        background-color: #e7f3fe;
+        border-left: 6px solid #2196f3;
+        padding: 10px;
+        margin: 15px 0;
+        width: 65%;
+        border-radius: 10px;
+      }
+      .note b {
+        color: #0073e6;
+      }
+      .highlight {
+        color: #d9534f;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-content">
+      <h1>Tính đóng gói trong lập trình hướng đối tượng</h1>
+      <p>
+        Trong lập trình, <b>tính đóng gói</b> giúp bảo vệ dữ liệu và tránh truy
+        cập trực tiếp đến các thuộc tính của đối tượng từ bên ngoài. <br />Điều
+        này có ích trong việc quản lý và bảo vệ dữ liệu, đồng thời cho phép kiểm
+        soát cách các thành phần khác nhau tương tác với đối tượng đó.
+      </p>
+      <p>Để có cái nhìn trực quan về tính đóng gói, bạn hãy xem ví dụ sau:</p>
+
+      <!-- khung code -->
+      <div class="code">
+        <!-- chữ code -->
+        <span class="code-title"><b>Code</b></span>
+        <!-- code bên trong khung code -->
+        <pre>
+            class Student {
+                public String name;
+                public int age;
+                public double gpa;
+            }
+          </pre
+        >
+      </div>
+      <p>
+        Trong ví dụ trên, các thuộc tính của lớp <code>Student</code> đều là
+        <b>public</b>, dẫn tới các thuộc tính này có thể được truy xuất trực
+        tiếp từ nơi khác. <br />Trên thực tế, bạn nên hạn chế tối đa các biến có
+        phạm vi truy cập <b>public</b>, vì nó vi phạm tính đóng gói trong lập
+        trình hướng đối tượng.
+      </p>
+
+      <p>
+        Để đảm bảo tính đóng gói cho lớp <code>Student</code>, bạn nên để phạm
+        vi truy cập của các thuộc tính là <b>private</b> <br />
+        và truy xuất tới các thuộc tính này thông qua các phương thức
+        <b>public</b> (gọi là các <i>setter</i>, <i>getter</i>) giống như sau:
+      </p>
+
+      <!-- khung code -->
+      <div class="code">
+        <!-- chữ code -->
+        <span class="code-title"><b>Code</b></span>
+        <!-- code bên trong khung code -->
+        <pre>
+            class Student {
+                private String name;
+                private int age;
+                private double gpa;
+            
+                public String getName() {
+                    return name;
+                }
+            
+                public void setName(String name) {
+                    this.name = name;
+                }
+            
+                public int getAge() {
+                    return age;
+                }
+            
+                public void setAge(int age) {
+                    this.age = age;
+                }
+            
+                public double getGpa() {
+                    return gpa;
+                }
+            
+                public void setGpa(double gpa) {
+                    this.gpa = gpa;
+                }
+            }
+          </pre
+        >
+      </div>
+      <p>
+        Với cách làm này, thông tin của đối tượng đã được ẩn đi. Bạn chỉ có thể
+        giao tiếp với đối tượng thông qua các phương thức. <br />
+        Điều này giúp đảm bảo rằng dữ liệu của đối tượng không bị sửa đổi hoặc
+        truy cập một cách không kiểm soát.
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./code.css" />
+  </head>
+  <body>
+    <div class="container-content">
+      <h1 class="title">Handling Exception</h1>
+      <h3 class="child-title"><b>Handling Exception</b></h3>
+      <div class="content">
+        <ul>
+          <li>Dùng <b> try-catch</b> để xử lý lỗi.</li>
+          <li><b>finally</b> luôn chạy (dùng để giải phóng tài nguyên).</li>
+        </ul>
+      </div>
+
+      <h3 class="child-title"><b>Ví dụ về Try-cath</b></h3>
+      <div class="content">
+        <div class="code">
+          <span class="code-title"><b>Code</b></span>
+          <pre><code class="language-java">
+            <span class="keyword">public class</span> <span class="class-name">Main</span> {
+                <span class="keyword">public static void</span> <span class="method-name">main</span>(<span class="keyword">String[]</span> args) {
+                    <span class="keyword">try</span> {
+                        <span class="comment">// Lỗi: Division by zero</span>
+                        int result = 10 / 0; 
+                    } <span class="keyword">catch</span> (ArithmeticException e) {
+                        System.out.println(<span class="string">"Cannot divide by zero: "</span> + e.getMessage());
+                    } <span class="keyword">finally</span> {
+                        System.out.println(<span class="string">"Execution completed"</span>);
+                    }
+                }
+            }
+            <p>//Cannot divide by zero: / by zero
+              Execution completed
+              </p>
+            </code></pre>
+        </div>
+      </div>
+      <div class="content"></div>
+    </div>
+  </body>
+</html>
