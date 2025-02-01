@@ -1,0 +1,108 @@
+.container-content {
+  width: 100%;
+}
+.title {
+  color: #1a73e8;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+  font-size: 28px;
+  /* font-family: sans-serif; */
+
+  /* border-bottom: 1px solid black; */
+}
+.child-title {
+  /* font-weight: 600px; */
+  padding-bottom: 10px;
+}
+.content {
+  padding-left: 30px;
+}
+
+pre {
+  border-radius: 10px; /* Bo góc của border */
+  /* padding: 10px; Thêm khoảng cách giữa nội dung và border */
+  width: 100%;
+  background-color: rgb(231, 233, 235);
+  color: black;
+  font-style: italic;
+}
+.code {
+  background-color: #cdd9e5;
+  padding-top: 10px;
+  border-radius: 10px;
+  width: 65%;
+}
+.code-title {
+  padding-left: 10px;
+  font-style: italic;
+}
+
+.comment,
+.string {
+  color: rgb(10, 89, 10);
+}
+.data-type,
+.number {
+  color: rgb(211, 46, 115);
+}
+.keyword {
+  color: rgb(37, 113, 159);
+}
+@media screen and (max-width: 900px) {
+  .code {
+    width: 100%;
+    overflow-x: auto;
+    padding: 0;
+    margin: 0;
+  }
+  .content {
+    padding: 0;
+    margin: 0;
+  }
+}
+/* 1.1 & 1.2 */
+.content-1 {
+  text-align: center;
+  font-weight: bold;
+  font-size:larger;
+}
+.content-2{
+  font-weight: bold;
+  color :#1a73e8;
+}
+.content-3{
+   font-weight: bold;
+}
+.oop {
+  font-size:larger;
+  
+}
+.oop li {
+  margin-top: 10px ;
+}
+.noidung  {
+  font-weight:bold;
+  color :#1a73e8;
+}
+.truutuong img {
+  width :450px ;
+}
+.classXeoto img {
+  height :450px;
+}
+.theme {
+  font-weight: bold;
+  text-align: center;
+  font-size: larger;
+}
+.ter  {
+  font-size: large;
+  font-style:oblique;
+}
+.text {
+  color :red ;
+}
+.noidung1{
+  font-weight: bold;
+  font-size:large;
+}
